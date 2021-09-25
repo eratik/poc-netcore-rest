@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  oscillo_rest_test:
+    image: ${DOCKER_REGISTRY-}oscilloresttest
+    build:
+      context: .
+      dockerfile: oscillo_rest_test/Dockerfile

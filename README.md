@@ -19,12 +19,12 @@ This project is a quick POC (control) project to test exposing .Net services via
 `docker build -t oscillo-rest-test-2 -f oscillo_rest_test/Dockerfile .`
 
 - Docker Tag your Image<br />
-`docker tag oscillo-rest-test-2 818038840593.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
+`docker tag oscillo-rest-test-2 {ACCOUNTID}.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
 
 - Login to the AWS ECR with Docker<br />
-`aws ecr get-login-password | docker login --username AWS --password-stdin 818038840593.dkr.ecr.us-east-1.amazonaws.com`
+`aws ecr get-login-password | docker login --username AWS --password-stdin {ACCOUNTID}.dkr.ecr.us-east-1.amazonaws.com`
 
 - Docker Push your Tagged Image<br />
-`docker push 818038840593.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
+`docker push {ACCOUNTID}.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
 
 

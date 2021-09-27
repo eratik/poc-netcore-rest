@@ -10,7 +10,7 @@ This project is a quick POC (control) project to test exposing .Net services via
 - You have Docker Desktop running locally
 - You have AWS credentials setup for the target account
 
-## Fargate Setup - Steps
+## Fargate - Publish Docker Image to ECR - CLI Steps (Mac Only, PC has Publish to AWS option)
 
 - Create your AWS Repo:<br />
 `aws ecr create-repository --repository-name oscillo-rest-test --region us-east-1`
@@ -27,4 +27,10 @@ This project is a quick POC (control) project to test exposing .Net services via
 - Docker Push your Tagged Image<br />
 `docker push {ACCOUNTID}.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
 
+## Fargate - Configure Cluster - AWS Console OR CLI 
 
+- Create your task definition
+- Create your cluster
+- Create your service
+
+## Fargate - CI/CD Pipeline

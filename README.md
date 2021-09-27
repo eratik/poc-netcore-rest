@@ -5,26 +5,26 @@ This project is a quick POC (control) project to test exposing .Net services via
 
 ## Fargate Deployment - Assumptions
 
--- You have a .Net Core Project Running Locally
--- You have added Docker Support in the prject (Right-click the project in Solution Explorer and select Add > Docker Support)
--- You have Docker Desktop running locally
--- You have AWS credentials setup for the target account
+- You have a .Net Core Project Running Locally
+- You have added Docker Support in the prject (Right-click the project in Solution Explorer and select Add > Docker Support)
+- You have Docker Desktop running locally
+- You have AWS credentials setup for the target account
 
 ## Fargate Setup - Steps
 
--- Create your AWS Repo:
+- Create your AWS Repo:<br />
 `aws ecr create-repository --repository-name oscillo-rest-test --region us-east-1`
 
--- Docker Build your Relase Image:
+- Docker Build your Relase Image:<br />
 `docker build -t oscillo-rest-test-2 -f oscillo_rest_test/Dockerfile .`
 
--- Docker Tag your Image
+- Docker Tag your Image<br />
 `docker tag oscillo-rest-test-2 818038840593.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
 
--- Login to the AWS ECR with Docker
+- Login to the AWS ECR with Docker<br />
 `aws ecr get-login-password | docker login --username AWS --password-stdin 818038840593.dkr.ecr.us-east-1.amazonaws.com`
 
--- Docker Push your Tagged Image --
-docker push 818038840593.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test
+- Docker Push your Tagged Image<br />
+`docker push 818038840593.dkr.ecr.us-east-1.amazonaws.com/oscillo-rest-test`
 
 

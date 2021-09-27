@@ -7,4 +7,10 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <None Remove="AWSSDK.Extensions.NETCore.Setup" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
+  </ItemGroup>
 </Project>
